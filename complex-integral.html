@@ -7518,7 +7518,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="%E8%A4%87%E7%B4%A0%E6%95%B0%E3%81%AE%E7%A9%8D%E5%88%86">複素数の積分<a class="anchor-link" href="#%E8%A4%87%E7%B4%A0%E6%95%B0%E3%81%AE%E7%A9%8D%E5%88%86">¶</a></h1><p>複素数関数の積分は複素平面上での積分となるため、線積分として計算します。</p>
 <p>Sympy 上で線積分を計算する場合、媒介変数で実部・虚部を表し計算します。</p>
-<p>次の積分は、x軸上の線分[0,1]上の複素数関数$f(z)=z$の線積分です。</p>
+<p>次の積分は、x 軸上の線分[0,1]上の複素数関数 $f(z)=z$ の線積分です。</p>
 </div>
 </div>
 </div>
@@ -7668,6 +7668,41 @@ $\displaystyle \frac{1}{2}$
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>この複素関数は領域内で正則なので、コーシーの積分定理より閉曲線上の積分を足し合わせると０となります。</p>
+<p>正則でない場合も計算してみましょう。以下の関数を (1,0)を中心とする半径１の円上で積分します。
+$$
+f(z)={1\over z-1}
+$$</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="n">r</span><span class="p">,</span><span class="n">theta</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s2">"r theta"</span><span class="p">)</span>
+<span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">theta</span><span class="o">*</span><span class="n">I</span><span class="p">)</span>
+<span class="n">dzdtheta</span><span class="o">=</span><span class="n">diff</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">dzdtheta</span><span class="p">,</span> <span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle 2 i \pi$
+</div>
 </div>
 </div>
 </div>
