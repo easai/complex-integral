@@ -7671,6 +7671,14 @@ $\displaystyle \frac{1}{2}$
 <p>正則でない場合も計算してみましょう。以下の関数を (1,0)を中心とする半径１の円上で積分します。
 $$
 f(z)={1\over z-1}
+$$
+円は$z=1+e^{i\theta}$で表せるので、${dz\over d\theta}=i e^{i\theta}$から、
+$$
+\begin{align*}
+\oint_C {1\over z-1} dz&amp;=\int_0^{2\pi} {1\over z-1} i e^{i\theta} d\theta\\
+&amp;=\int_0^{2\pi} {1\over e^{i\theta}} i e^{i\theta} d\theta\\
+&amp;=2i\pi
+\end{align*}
 $$</p>
 </div>
 </div>
